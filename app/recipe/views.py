@@ -34,8 +34,10 @@ class RecipeViewSet(viewsets.ModelViewSet):
 # Son diferentes formas de crear el CRUD,
 # con los MIXINs uno por uno y ModelViewSet con todos
 
-class TagViewSet(mixins.DestroyModelMixin, mixins.UpdateModelMixin,
-        mixins.ListModelMixin, viewsets.GenericViewSet):
+class TagViewSet(mixins.DestroyModelMixin,
+                 mixins.UpdateModelMixin,
+                 mixins.ListModelMixin,
+                 viewsets.GenericViewSet):
     serializer_class = serializers.TagSerializer
     queryset = Tag.objects.all()
     authentication_classes = [TokenAuthentication]
